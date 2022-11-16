@@ -1,8 +1,15 @@
-# frozen_string_literal: true
+require "makroon_palindrome/version"
 
-require_relative "makroon_palindrome/version"
+class String
+	# returns true for a palindrome, false otherwise
+	def palindrome?
+		processed_content == processed_content.reverse
+	end
 
-module MakroonPalindrome
-  class Error < StandardError; end
-  # Your code goes here...
+	private
+
+	# returns content for palindrome testing
+	def processed_content
+		scan(/[a-z]/i).join.downcase
+	end
 end
