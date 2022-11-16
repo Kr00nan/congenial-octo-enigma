@@ -20,7 +20,7 @@ class TestMakroonPalindrome < Minitest::Test
   end
 
   def test_integer_non_palindrome
-	  assert 12345.palindrome?
+	  refute 12345.palindrome?
   end
 
   def test_integer_palindrome
